@@ -33,3 +33,18 @@ ALTER TABLE clothing_items ADD COLUMN shop_id UUID;
 ALTER TABLE clothing_items ADD FOREIGN KEY (shop_id) REFERENCES shops(id);
 
 
+-- Inserimento di dati di esempio nella tabella shops
+INSERT INTO shops (id, name, address, city, country) VALUES
+(UUID(), 'Fashion Hub', '123 Fashion St.', 'Milan', 'Italy'),
+(UUID(), 'Urban Wear', '45 Trendy Ave.', 'New York', 'USA'),
+(UUID(), 'Chic Boutique', '78 Style Rd.', 'Paris', 'France');
+
+-- Recupero degli ID dei negozi per usarli nei riferimenti
+SELECT * FROM shops;
+
+-- Utilizza gli ID ottenuti dal comando sopra per associare i negozi agli articoli
+
+-- Aggiorna clothing_items con gli ID dei negozi
+UPDATE clothing_items SET shop_id = '<UUID-del-Fashion-Hub>' WHERE name IN ('T-shirt Basic', 'Jeans Skinny Fit');
+UPDATE clothing_items SET shop_id = '<UUID-del-Urban-Wear>' WHERE name IN ('Felpa Oversize', 'Giacca Invernale');
+UPDATE clothing_items SET shop_id = '<UUID-della-Chic-Boutique>' WHERE name IN ('Pantaloni da Jogging', 'Camicia Casual', 'T-shirt Grafica');
