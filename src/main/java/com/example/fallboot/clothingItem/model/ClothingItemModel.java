@@ -4,11 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="clothingItems")
+@Table(name="clothing_items")
 public class ClothingItemModel {
 
     @Id
@@ -21,6 +23,10 @@ public class ClothingItemModel {
     private String color;
     private Number price;
     private boolean inStock;
+    @ManyToOne
+    @JoinColumn(name = "shop_id", nullable = false)
+    private ShopModel shop;
+
 
     // Getters and Setters
     public String getId() {

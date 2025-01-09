@@ -1,6 +1,7 @@
 package com.example.fallboot.clothingItem.repository;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -16,5 +17,9 @@ public interface ClothingItemRepository extends JpaRepository<ClothingItemModel,
 
     // Find clothing items that are in stock
     List<ClothingItemModel> findByInStockTrue();
+
+    List<ClothingItem> findByShopId(UUID shopId);
+    List<ClothingItem> findByNameContainingIgnoreCase(String name);
+
 }
 
