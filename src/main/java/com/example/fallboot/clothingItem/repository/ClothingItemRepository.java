@@ -18,8 +18,6 @@ public interface ClothingItemRepository extends JpaRepository<ClothingItemModel,
     // Find clothing items that are in stock
     List<ClothingItemModel> findByInStockTrue();
 
-    List<ClothingItem> findByShopId(UUID shopId);
-    List<ClothingItem> findByNameContainingIgnoreCase(String name);
+    List<ClothingItemModel> findByShopId(String shopId);
 
 }
-
