@@ -1,4 +1,4 @@
-package com.example.demo.ingredients.model;
+package com.example.fallboot.clothingItem.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,38 +7,38 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="ingredients")
+@Table(name="clothingItems")
 
-public class IngredientsModel {
+public class ClothingItemsModel {
 
     @Id
 
-    @Column(name ="ingredient_id")
-    private Integer ingredient_id;
+    @Column(name ="clothingItem_id")
+    private Integer clothingItem_id;
 
     @Column(name ="aliased_name")
-    private String ingredient_name;
+    private String clothingItem_name;
 
-    @Column(name ="ingredient_synonyms")
+    @Column(name ="clothingItem_synonyms")
     private String ingredien_synonyms;
 
     @Column(name ="category_id")
     private Integer category_id;
 
-    public Integer getIngredient_id() {
-        return ingredient_id;
+    public Integer getClothingItem_id() {
+        return clothingItem_id;
     }
 
-    public void setIngredient_id(Integer ingredient_id) {
-        this.ingredient_id = ingredient_id;
+    public void setClothingItem_id(Integer clothingItem_id) {
+        this.clothingItem_id = clothingItem_id;
     }
 
-    public String getIngredient_name() {
-        return ingredient_name;
+    public String getClothingItem_name() {
+        return clothingItem_name;
     }
 
-    public void setIngredient_name(String ingredient_name) {
-        this.ingredient_name = ingredient_name;
+    public void setClothingItem_name(String clothingItem_name) {
+        this.clothingItem_name = clothingItem_name;
     }
 
     public String getIngredien_synonyms() {
@@ -59,15 +59,15 @@ public class IngredientsModel {
 
 
     //constructor
-    public IngredientsModel(Integer ingredient_id, String ingredient_name, String ingredien_synonyms,
+    public ClothingItemsModel(Integer clothingItem_id, String clothingItem_name, String ingredien_synonyms,
             Integer category_id) {
-        this.ingredient_id = ingredient_id;
-        this.ingredient_name = ingredient_name;
+        this.clothingItem_id = clothingItem_id;
+        this.clothingItem_name = clothingItem_name;
         this.ingredien_synonyms = ingredien_synonyms;
         this.category_id = category_id;
     }
 
-    public IngredientsModel() {
+    public ClothingItemsModel() {
     }
     
 
