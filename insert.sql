@@ -18,3 +18,18 @@ INSERT INTO clothing_items (id, name, category, size, color, price, in_stock) VA
 (UUID(), 'Pantaloni da Jogging', 'Pantaloni', 'S', 'Gray', 29.99, TRUE),
 (UUID(), 'Camicia Casual', 'Camicie', 'M', 'Blue', 24.99, TRUE),
 (UUID(), 'T-shirt Grafica', 'T-shirt', 'S', 'Red', 22.99, FALSE);
+
+
+CREATE TABLE shops (
+    id UUID PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    country VARCHAR(100) NOT NULL
+);
+
+-- Relazione tra shops e clothing_items
+ALTER TABLE clothing_items ADD COLUMN shop_id UUID;
+ALTER TABLE clothing_items ADD FOREIGN KEY (shop_id) REFERENCES shops(id);
+
+
